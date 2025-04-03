@@ -45,7 +45,6 @@ public class Account {
 	}
 	
 	public String toString() {
-//		System.out.printf("Account %d, Holder: %s, Balance: $ %.2f", getNumberAccount(), getName(), getValue());
-		return "Account " + this.numberAccount + ", Holder " + this.name + ", Balance: " + this.value; 
+		return "Account " + this.numberAccount + ", Holder " + this.name + ", Balance: " + String.format("%.2f", this.value); 
 	}
 }
