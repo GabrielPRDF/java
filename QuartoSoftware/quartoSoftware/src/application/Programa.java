@@ -5,11 +5,12 @@ import java.util.Scanner;
 import entities.Employee;
 import entities.Retangulo;
 import entities.Student;
+import util.Cambio;
 
 public class Programa {
 	
 	public static void main(String[] args) {
-		int exercicio = 3;
+		int exercicio = 4;
 		
 		/*
 		 * Exercicio 1
@@ -38,7 +39,6 @@ public class Programa {
 		 * (somente o salário bruto é afetado pela porcentagem) e mostrar novamente os dados 
 		 * do funcionário. Use a classe projetada abaixo.
 		 */
-		
 		if (exercicio == 2) {
 			Scanner sc = new Scanner(System.in);
 			Employee person = new Employee();
@@ -54,6 +54,15 @@ public class Programa {
 			sc.close();
 		}
 		
+		/*
+		 * Exercicio 3
+		 * Fazer um programa para ler o nome de um aluno e as três notas que ele obteve 
+		 * nos três trimestres do ano (primeiro trimestre vale 30 e o segundo e terceiro 
+		 * valem 35 cada). Ao final, mostrar qual a nota final do aluno no ano.
+		 * Dizer também se o aluno está aprovado (PASS) ou não (FAILED) e, em caso negativo, 
+		 * quantos pontos faltam para o aluno obter o mínimo para ser aprovado (que é 60% da nota).
+		 * Você deve criar uma classe Student para resolver este problema.
+		 */
 		if (exercicio == 3) {
 			Scanner sc = new Scanner(System.in);
 			Student person = new Student();
@@ -66,6 +75,25 @@ public class Programa {
 			System.out.println("Insert score 3:");
 			person.tri3 = sc.nextDouble();
 			person.resultado();
+			sc.close();
+		}
+		
+		/*
+		 * Exercicio 4
+		 * Faça um programa para ler a cotação do dólar, e depois um valor em dólares a ser comprado por
+		 * uma pessoa em reais. Informar quantos reais a pessoa vai pagar pelos dólares, considerando ainda
+		 * que a pessoa terá que pagar 6% de IOF sobre o valor em dólar. Criar uma classe CurrencyConverter
+		 * para ser responsável pelos cálculos.
+		 */
+		if (exercicio == 4) {
+			Scanner sc = new Scanner(System.in);
+			System.out.println("What is the dollar price?");
+			double dolar = sc.nextDouble();
+			System.out.println("How many dollars will be bought?");
+			double valorConversao = sc.nextDouble();
+			System.out.println("Price IOF:" + Cambio.IOF);
+			System.out.printf("Calcule: %.2f%n", Cambio.calculaValor(dolar, valorConversao));
+			
 		}
 		
 	}
