@@ -8,7 +8,7 @@ public class aplication {
 
 	public static void main(String[] args) {
 		Locale.setDefault(Locale.US);
-		int selecionado = 7;
+		int selecionado = 8;
 		
 		switch (selecionado) {
 			case 0:
@@ -34,6 +34,12 @@ public class aplication {
 				break;
 			case 7:
 				Vetores.exercicio8();
+				break;
+			case 8:
+				Vetores.exercicio9();
+				break;
+			case 9:
+				Vetores.exercicio10();
 				break;
 			default:
 				break;

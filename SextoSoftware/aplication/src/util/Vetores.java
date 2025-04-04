@@ -197,4 +197,48 @@ public class Vetores {
 		}
 		sc.close();
 	}
+	
+	public static void exercicio9() {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Quantos pessoas vai ter digitar? ");
+		int n = sc.nextInt(), idadeMaior = 0;;
+		String nomeMaisVelho = "";
+		Pessoa[] vector = new Pessoa[n];
+		for (int i = 0; i < vector.length; i++) {
+			System.out.printf("Digite da " + "%d" + "a pessoa:%n", i);
+			System.out.print("Nome: ");
+			String nome = sc.next();
+			System.out.print("Idade: ");
+			int idade = sc.nextInt();
+			vector[i] = new Pessoa(nome, idade);
+			if (idadeMaior < vector[i].getIdade()) {
+				idadeMaior = vector[i].getIdade();
+				nomeMaisVelho = vector[i].getNome();
+			}
+		}
+		System.out.println("PESSOA MAIS VELHA: " + nomeMaisVelho);
+		sc.close();
+	}
+	
+	public static void exercicio10() {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Quantos pessoas vai ter digitar? ");
+		int n = sc.nextInt(), idadeMaior = 0;;
+		String nomeMaisVelho = "";
+		Pessoa[] vector = new Pessoa[n];
+		for (int i = 0; i < vector.length; i++) {
+			System.out.printf("Digite da " + "%d" + "a pessoa:%n", i);
+			System.out.print("Nome: ");
+			String nome = sc.next();
+			System.out.print("Idade: ");
+			int idade = sc.nextInt();
+			vector[i] = new Pessoa(nome, idade);
+			if (idadeMaior < vector[i].getIdade()) {
+				idadeMaior = vector[i].getIdade();
+				nomeMaisVelho = vector[i].getNome();
+			}
+		}
+		System.out.println("PESSOA MAIS VELHA: " + nomeMaisVelho);
+		sc.close();
+	}
 }
