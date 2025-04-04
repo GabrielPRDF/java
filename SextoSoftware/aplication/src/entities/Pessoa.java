@@ -38,6 +38,4 @@ public class Pessoa {
 	public void setAltura(double altura) {
 		this.altura = altura;
 	}
-	
-	
 }
