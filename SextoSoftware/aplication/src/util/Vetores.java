@@ -3,6 +3,7 @@ package util;
 import java.util.Scanner;
 
 import entities.Pessoa;
+import entities.Student;
 
 public class Vetores {
 
@@ -222,23 +223,61 @@ public class Vetores {
 	
 	public static void exercicio10() {
 		Scanner sc = new Scanner(System.in);
-		System.out.print("Quantos pessoas vai ter digitar? ");
-		int n = sc.nextInt(), idadeMaior = 0;;
-		String nomeMaisVelho = "";
-		Pessoa[] vector = new Pessoa[n];
+		System.out.print("Quantos alunos serao digitados? ");
+		int n = sc.nextInt();
+		Student[] vector = new Student[n];
 		for (int i = 0; i < vector.length; i++) {
-			System.out.printf("Digite da " + "%d" + "a pessoa:%n", i);
-			System.out.print("Nome: ");
-			String nome = sc.next();
-			System.out.print("Idade: ");
-			int idade = sc.nextInt();
-			vector[i] = new Pessoa(nome, idade);
-			if (idadeMaior < vector[i].getIdade()) {
-				idadeMaior = vector[i].getIdade();
-				nomeMaisVelho = vector[i].getNome();
+			System.out.printf("Digite o nome, primeira e segunda nota do  " + "%d" + "o aluno:%n", i);
+			sc.nextLine();
+			String nome = sc.nextLine();;;
+			double nota1 = sc.nextDouble();
+			double nota2 = sc.nextDouble();
+			vector[i] = new Student(nome, nota1, nota2);
+		}
+		System.out.println("Alunos aprovados: ");
+		for (int i = 0; i < vector.length; i++) {
+			vector[i].aprovadoOuReprovado();
+		}
+		sc.close();
+	}
+	
+	public static void exercicio11() {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Quantas pessoas serao digitadas? ");
+		int n = sc.nextInt();
+		int totalMulheres = 0;
+		double menorAltura = 0.0, maiorAltura =0.0, somaMulheres = 0.0;
+		double[] altura = new double[n];
+		char [] genero = new char[n];
+		for (int i = 0; i < altura.length; i++) {
+			System.out.printf("Altura da " + i + "a pessoa: ");
+			altura[i] = sc.nextDouble();
+			System.out.printf("Genero da " + i + "a pessoa: ");
+			genero[i] = sc.next().charAt(0);
+			if (menorAltura == 0) {
+				menorAltura = altura[i];
+				maiorAltura = altura[i];
+			}
+			if (menorAltura > altura[i]) {
+				menorAltura = altura[i]; 
+			}
+			if (maiorAltura < altura[i]) {
+				maiorAltura = altura[i];
+			}
+			if (genero[i] == 'F') {
+				totalMulheres++;
+				somaMulheres += altura[i];
 			}
 		}
-		System.out.println("PESSOA MAIS VELHA: " + nomeMaisVelho);
+		
+		System.out.print("Menor altura = " + menorAltura);
+		System.out.println();
+		System.out.print("Maior altura = " + maiorAltura);
+		System.out.println();
+		System.out.print("Media das alturas das mulheres = " + String.format("%.2f", (somaMulheres / totalMulheres)));
+		System.out.println();
+		System.out.print("Numero de homens = " + (altura.length - totalMulheres));
+		System.out.println();
 		sc.close();
 	}
 }
