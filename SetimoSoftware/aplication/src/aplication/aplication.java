@@ -11,6 +11,81 @@ import entities.Quartos;
 public class aplication {
 
 	public static void main(String[] args) {
+		int selecao = 0;
+		if (selecao == 1) {
+			logicaLista();
+		} else {
+			Scanner sc = new Scanner(System.in);
+			System.out.println("Digite numero de linhas e de colunas:");
+			int x = sc.nextInt(), y = sc.nextInt();
+			System.out.println();
+			int[][] matriz = new int[x][y];
+			System.out.println("Digite os numeros:");
+			for (int i = 0; i < matriz.length; i++) {
+				for (int e = 0; e < matriz[i].length; e++) {
+					matriz[i][e] = sc.nextInt();
+				}
+			}
+			
+			System.out.println();
+			for (int i = 0; i < matriz.length; i++) {
+				for (int e = 0; e < matriz[i].length; e++) {
+					System.out.print(matriz[i][e] + " ");
+				}
+				System.out.println();
+			}
+			System.out.println();
+			boolean valida = false;
+			int posicaox = 0, posicaoy = 0;
+//			do {
+//				System.out.print("Posição: ");
+//				posicaox = sc.nextInt();
+//				posicaoy = sc.nextInt();
+//				System.out.println();
+//				if (posicaox >= 0 && posicaox < x && posicaoy <= y) {
+//					printAdjacentes(posicaox, posicaoy, matriz);								
+//				} else {
+//					valida = true;
+//				}
+//			} while(valida == false);
+			
+			System.out.println("Digite o numero:");
+			int numeroValida = sc.nextInt();
+			for (int i = 0; i < matriz.length; i++) {
+				for (int e = 0; e < matriz[i].length; e++) {
+					if (matriz[i][e] == numeroValida) {
+						System.out.println();
+						printAdjacentes(i, e, matriz);
+					}
+				}
+			}
+			sc.close();
+		}
+		
+	}
+	
+	public static void printAdjacentes(int posicaox, int posicaoy, int matriz[][]) {
+		System.out.println(matriz[posicaox][posicaoy]);	
+		System.out.println();
+		if ((posicaox - 1) >= 0) {
+			System.out.print("Up: " + matriz[posicaox - 1][posicaoy]);
+			System.out.println();
+		}
+		if ((posicaox + 1) < matriz.length) {
+			System.out.print("Down: " + matriz[posicaox + 1][posicaoy]);
+			System.out.println();
+		}
+		if ((posicaoy - 1) >= 0) {
+			System.out.print("Left: " + matriz[posicaox][posicaoy - 1]);
+			System.out.println();
+		}
+		if ((posicaoy + 1) < matriz[posicaox].length) {
+			System.out.print("Right: " + matriz[posicaox][posicaoy + 1]);
+			System.out.println();
+		}
+	}
+	
+	public static void logicaLista() {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 		System.out.print("How many employees will be registered? ");
