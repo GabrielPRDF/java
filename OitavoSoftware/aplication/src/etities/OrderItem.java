@@ -38,4 +38,14 @@ public class OrderItem {
 	public double subTotal() {
 		return price * quantaty;
 	}
+	
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append(product.getName() + ", $");
+		sb.append(product.getPrice());
+		sb.append(", Quantity:");
+		sb.append(quantaty + ", Subtotal: $");
+		sb.append(String.format("%.2f", subTotal()) + "\n");
+		return sb.toString();
+	}
 }

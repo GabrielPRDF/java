@@ -1,5 +1,6 @@
 package etities;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -7,6 +8,7 @@ import java.util.List;
 import etities.enuns.OrderStatus;
 
 public class Order {
+	SimpleDateFormat stf = new SimpleDateFormat("dd/MM/yyyy");
 	private Date moment;
 	private OrderStatus status;
 	private List<OrderItem> order = new ArrayList<>();
@@ -58,6 +60,24 @@ public class Order {
 			soma += x.getPrice() * x.getQuantaty();
 		}
 		return soma;
+	}
+	
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append("ORDER SUMMARY:" + "\n");
+		sb.append("Order moment: ");
+		sb.append(stf.format(moment) + "\n");
+		sb.append("Order status: ");
+		sb.append(status + "\n");
+		sb.append("Client: " + client.getName());
+		sb.append(" (" + stf.format(client.getBirthDate()));
+		sb.append(") " + client.getEmail() + "\n");
+		for (OrderItem x : order) {
+			sb.append(x);
+		}
+		sb.append("Total price: $");
+		sb.append(total());
+		return sb.toString();
 	}
 
 }
