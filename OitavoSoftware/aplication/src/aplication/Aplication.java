@@ -18,7 +18,6 @@ public class Aplication {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter cliente data:");
 		System.out.print("Name: ");
-//		System.out.println();
 		String name = sc.next();
 		System.out.print("Email: ");
 		String email = sc.next();
