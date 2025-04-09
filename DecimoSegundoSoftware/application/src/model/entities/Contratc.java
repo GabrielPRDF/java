@@ -1,19 +1,19 @@
 package model.entities;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Contratc {
-	SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+	DateTimeFormatter sdf = DateTimeFormatter.ofPattern("dd/MM/yyyy");;
 	private Integer number;
-	private Date date;
+	private LocalDate date;
 	private Double totalValue;
-	private List<Installment> list;
+	private List<Installment> list = new ArrayList<>();
 	public Contratc() {}
 	
-	public Contratc(Integer number, Date date, Double totalValue) {
-		super();
+	public Contratc(Integer number, LocalDate date, Double totalValue) {
 		this.number = number;
 		this.date = date;
 		this.totalValue = totalValue;
@@ -27,11 +27,11 @@ public class Contratc {
 		this.number = number;
 	}
 
-	public Date getDate() {
+	public LocalDate getDate() {
 		return date;
 	}
 
-	public void setDate(Date date) {
+	public void setDate(LocalDate date) {
 		this.date = date;
 	}
 
@@ -45,10 +45,6 @@ public class Contratc {
 
 	public List<Installment> getList() {
 		return list;
-	}
-
-	public void addList(Installment obj) {
-		this.list.add(obj);
 	}
 
 	public void removeList(Installment obj) {
