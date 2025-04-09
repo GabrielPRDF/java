@@ -1,5 +1,6 @@
 package model.services;
 
-public class PaypalService {
-
+public interface PaypalService {
+	Double payment(Double amount);
+	Double interest(Double amount, Integer months);
 }
