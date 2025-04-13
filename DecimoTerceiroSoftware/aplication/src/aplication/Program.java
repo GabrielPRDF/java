@@ -1,8 +1,16 @@
 package aplication;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Locale;
+import java.util.Map;
 import java.util.Scanner;
 import java.util.Set;
 import java.util.TreeSet;
@@ -11,6 +19,29 @@ public class Program {
 
 	public static void main(String[] args) {
 		Locale.setDefault(Locale.US);
+		String strPath = "/Users/gabriel/code/Projetos Java/java/DecimoTerceiroSoftware/arquivoTeste.csv";
+		Map<String, Integer> list = new HashMap<>();
+
+		try (BufferedReader br = new BufferedReader(new FileReader(strPath))) {
+			String line = br.readLine();
+			while (line != null) {
+				String[] lineFormat = line.split(",");
+				if (list.containsKey(lineFormat[0])) {
+					list.put(lineFormat[0], (list.get(lineFormat[0]) + Integer.parseInt(lineFormat[1])));										
+				} else {
+					list.put(lineFormat[0], Integer.parseInt(lineFormat[1]));					
+				}
+				line = br.readLine();
+			}
+		} catch (IOException e) {
+			System.out.println("Error: " + e.getMessage());
+		}
+		for(String item : list.keySet()) {
+			System.out.println(item + ": " + list.get(item));
+		}
+	}
+	
+	public static void exercicio1() {
 		Scanner sc = new Scanner(System.in);
 //		Set<Integer> listA = new TreeSet<>(Arrays.asList(21, 35, 22));
 //		Set<Integer> listB = new TreeSet<>(Arrays.asList(21, 50));
@@ -50,7 +81,6 @@ public class Program {
 		System.out.println("Quantidade de Alunos: " + listUnion.size());
 		
 		sc.close();
-		
 	}
 	
 	public static char choiceCh(Integer n) {
