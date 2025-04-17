@@ -27,6 +27,8 @@ public class Program {
 					"(?, ?, ?, ?, ?)",
 					Statement.RETURN_GENERATED_KEYS
 					);
+//			Caso queira inserir mais de um dado
+//			st = conn.prepareStatement("insert into department (Name) values ('d1'), ('d2')");
 			st.setString(1, "Gabriel Ribeiro");
 			st.setString(2, "gabrielprdf1@gmail.com");
 			st.setDate(3, new java.sql.Date(sdf.parse("22/03/1995").getTime()));
