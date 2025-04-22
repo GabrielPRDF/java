@@ -1,4 +1,6 @@
-# Repositório para estudar e praticar Java.
+# Repositório Java
+
+Repositório criado para estudar e praticar a linguagem JAVA e suas ferramentas.
 
 
 ### Curso Udemy: https://www.udemy.com/course/java-curso-completo/
