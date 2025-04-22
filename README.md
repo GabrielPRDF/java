@@ -1,7 +1,7 @@
 # Repositório para estudar e praticar Java.
 
 
-## Curso Udemy: https://www.udemy.com/course/java-curso-completo/
+### Curso Udemy: https://www.udemy.com/course/java-curso-completo/
 
 * PrimeiroSoftware
 * SegundoSoftware
@@ -19,7 +19,7 @@
 * DecimoQuartoSoftware
 * DecimoQuintoSoftware
 
-## Curso Linkedin: https://www.linkedin.com/learning/java-formacao-basica-23718889
+### Curso Linkedin: https://www.linkedin.com/learning/java-formacao-basica-23718889
 
 * CursoLinkedin/01
 * CursoLinkedin/02
