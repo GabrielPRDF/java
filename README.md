@@ -3,7 +3,9 @@
 Repositório criado para estudar e praticar a linguagem JAVA e suas ferramentas.
 
 
-### Curso Udemy: https://www.udemy.com/course/java-curso-completo/
+### Cursos Udemy: 
+
+#### https://www.udemy.com/course/java-curso-completo/
 
 * PrimeiroSoftware
 * SegundoSoftware
@@ -23,10 +25,12 @@ Repositório criado para estudar e praticar a linguagem JAVA e suas ferramentas.
 * SoftwareOneSpring
 * SoftwareTwoSpring
 
-### Curso Linkedin: https://www.linkedin.com/learning/java-formacao-basica-23718889
+### Cursos Linkedin: 
 
-* CursoLinkedin/01
-* CursoLinkedin/02
-* CursoLinkedin/03
-* CursoLinkedin/04
-* CursoLinkedin/05
+#### Basic https://www.linkedin.com/learning/java-formacao-basica-23718889
+
+* CursoLinkedin/Basic/01
+* CursoLinkedin/Basic/02
+* CursoLinkedin/Basic/03
+* CursoLinkedin/Basic/04
+* CursoLinkedin/Basic/05
